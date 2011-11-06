@@ -28,11 +28,12 @@ body {
   overflow-x: hidden;
   overflow-y: auto;
 
-  background: rgb(215, 215, 215);
+/*  background: rgb(215, 215, 215);
   background: -o-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
   background: -moz-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
   background: -webkit-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
   background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(rgb(240, 240, 240)), to(rgb(190, 190, 190)));
+*/  background-image: url(http://krtconf.com/images/patternpants.png);
 
   -webkit-font-smoothing: antialiased;
 }
@@ -155,11 +156,11 @@ body {
 /* Slide styles */
 
 .slides.template-default article.biglogo {
-  background: white url(images/google-logo.png) 50% 50% no-repeat;
+  background: white url(images/superfeedr-logo.png) 50% 50% no-repeat;
 }
 
 .slides.template-io2011 article.biglogo {
-  background: white url(images/googleio-logo.png) 50% 50% no-repeat;
+  background: white url(images/superfeedr-logo.png) 50% 50% no-repeat;
 
   background-size: 600px;
 }
@@ -249,8 +250,9 @@ body {
 /* Styles for slides */
 
 .slides > article {
-  font-family: 'Open Sans', Arial, sans-serif;
-
+/*  font-family: 'Open Sans', Arial, sans-serif;
+*/
+  font-family: "museo-sans-1", "museo-sans-2";
   color: rgb(102, 102, 102);
   text-shadow: 0 1px 1px rgba(0, 0, 0, .1);
 
