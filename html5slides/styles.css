@@ -159,6 +159,23 @@ body {
   background: white url(images/superfeedr-logo.png) 50% 50% no-repeat;
 }
 
+.slides.template-krtconf article.biglogo {
+  background: white url(images/superfeedr-logo.png) 50% 20% no-repeat;
+  background-size:60%
+}
+
+.slides.template-krtconf .biglogo h1{
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    width:90%;
+    padding:0px;
+    text-align:center;
+    margin-top:450px;
+}
+
+
+
 .slides.template-io2011 article.biglogo {
   background: white url(images/superfeedr-logo.png) 50% 50% no-repeat;
 
@@ -250,10 +267,10 @@ body {
 /* Styles for slides */
 
 .slides > article {
-/*  font-family: 'Open Sans', Arial, sans-serif;
-*/
-  font-family: "museo-sans-1", "museo-sans-2";
-  color: rgb(102, 102, 102);
+  font-family: 'Open Sans', Arial, sans-serif;
+
+/*  font-family: "museo-sans-1", "museo-sans-2";
+*/  color: rgb(102, 102, 102);
   text-shadow: 0 1px 1px rgba(0, 0, 0, .1);
 
   font-size: 30px;
@@ -319,6 +336,11 @@ h1 {
   letter-spacing: -3px;
 
   color: rgb(51, 51, 51);
+}
+
+h1.up {
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 h2 {
@@ -612,3 +634,6 @@ article.smaller q::after {
 .prettyprint .var { /* a declaration; a variable name */
   color: rgb(127, 0, 127);
 }  
+
+
+

@@ -1,0 +1,31 @@
+
+<!doctype html>
+<html><head>
+    <script type="text/javascript" src="Sound/swfobject.js"></script>
+    <script type="text/javascript" src="Sound/sound.js"></script>
+    <script type="text/javascript" src="ulaw.js"></script>
+    <script type="text/javascript" src="sockjs-0.1.min.js"></script>
+    <script type="text/javascript">
+        Sound.initialize({ swfLocation: "Sound/SoundMain.swf" });
+        var sound = new Sound();
+        sound.play();
+        var channel = location.search.match(/channel=(\w+)/)[1];
+        var sock = new SockJS("/listen/" + channel);
+        sock.onmessage = function(message) {
+            sound.buffer(decode(message.data));
+        }
+
+        function decode(frame) {
+            var decoded = [];
+            for (var i = 0; i < frame.length; i++) {
+                var sample = MuLaw.decode(frame.charCodeAt(i));
+                var code = String.fromCharCode(sample + 32767);
+                decoded.push(code);
+                decoded.push(code);
+                decoded.push(code);
+                decoded.push(code);
+            }
+            return decoded.join("");
+        }
+    </script>
+</head><body></body></html>

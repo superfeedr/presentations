@@ -18,9 +18,6 @@
 
     <meta charset='utf-8'>
     <script src='./html5slides/slides.js'></script>
-    <script type="text/javascript" src="http://use.typekit.com/qiz5joe.js"></script>
-    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-    
   </head>
   
   <style>
@@ -40,333 +37,206 @@
         
       
       <article class='biglogo'>
+          <h1>Making the web realtime</h1>
+          <p style="text-align:center">@superfeedr - @julien51</p>
       </article>
 
       <article>
-        <h1>
-          Title Goes Here Up
-          <br>
-          To Two Lines
-        </h1>
-        <p>
-          Sergey Brin
-          <br>
-          May 10, 2011
-        </p>
+          <h1>Making the web realtime</h1>
+        <ul class='build'>
+            <li>Client to Server is not enough</li>
+            <li>Realtime is Push</li>
+            <li>Feeds and HTTP : reality check</li>
+            <li>What happens then?</li>
+        </ul>
       </article>
       
       <article>
-        <p>
-          This is a slide with just text. This is a slide with just text.
-          This is a slide with just text. This is a slide with just text.
-          This is a slide with just text. This is a slide with just text.
-        </p>
-        <p>
-          There is more text just underneath.
-        </p>
-      </article>
-
-      <article>
-        <h3>
-          Simple slide with header and text
-        </h3>
-        <p>
-          This is a slide with just text. This is a slide with just text.
-          This is a slide with just text. This is a slide with just text.
-          This is a slide with just text. This is a slide with just text.
-        </p>
-        <p>
-          There is more text just underneath with a <code>code sample: 5px</code>.
-        </p>
-      </article>
-
-      <article class='smaller'>
-        <h3>
-          Simple slide with header and text (small font)
-        </h3>
-        <p>
-          This is a slide with just text. This is a slide with just text.
-          This is a slide with just text. This is a slide with just text.
-          This is a slide with just text. This is a slide with just text.
-        </p>
-        <p>
-          There is more text just underneath with a <code>code sample: 5px</code>.
-        </p>
-      </article>
-
-      <article>
-        <h3>
-          Slide with bullet points and a longer title, just because we
-          can make it longer
-        </h3>
-        <ul>
-          <li>
-            Use this template to create your presentation
-          </li>
-          <li>
-            Use the provided color palette, box and arrow graphics, and
-            chart styles
-          </li>
-          <li>
-            Instructions are provided to assist you in using this
-            presentation template effectively
-          </li>
-          <li>
-            At all times strive to maintain Google's corporate look and feel
-          </li>
-        </ul>
-      </article>
-
-      <article>
-        <h3>
-          Slide with bullet points that builds
-        </h3>
-        <ul class="build">
-          <li>
-            This is an example of a list
-          </li>
-          <li>
-            The list items fade in
-          </li>
-          <li>
-            Last one!
-          </li>
-        </ul>
-
-        <div class="build">
-          <p>Any element with child nodes can build.</p>
-          <p>It doesn't have to be a list.</p>
-        </div>
-      </article>
-
-      <article class='smaller'>
-        <h3>
-          Slide with bullet points (small font)
-        </h3>
-        <ul>
-          <li>
-            Use this template to create your presentation
-          <li>
-            Use the provided color palette, box and arrow graphics, and
-            chart styles
-          <li>
-            Instructions are provided to assist you in using this
-            presentation template effectively
-          <li>
-            At all times strive to maintain Google's corporate look and feel
-        </ul>
-      </article>
-
-      <article>
-        <h3>
-          Slide with a table
-        </h3>
+        <h1 class="up">The web is Client to Server</h1>
         
-        <table>
-          <tr>
-            <th>
-              Name
-            <th>
-              Occupation
-          <tr>
-            <td>
-              Luke Mahé
-            <td>
-              V.P. of Keepin’ It Real
-          <tr>
-            <td>
-              Marcin Wichary
-            <td>
-              The Michael Bay of Doodles
-        </table>
+        <h3>At the software level</h3> 
+        <p>The Browser is the HTML client, the web server is the ... server. HTTP is a <em>one way</em> protocol. Request != Response</p>
+        <br /><br />
+
+        <h3>At the human level</h3>
+        <p>The user is the client, the application is the server. We read/write data to web applications, and they only show us different views of that data. <em>They very rarely interact back with us</em>.</p>
       </article>
-      
-      <article class='smaller'>
-        <h3>
-          Slide with a table (smaller text)
-        </h3>
-        
-        <table>
-          <tr>
-            <th>
-              Name
-            <th>
-              Occupation
-          <tr>
-            <td>
-              Luke Mahé
-            <td>
-              V.P. of Keepin’ It Real
-          <tr>
-            <td>
-              Marcin Wichary
-            <td>
-              The Michael Bay of Doodles
-        </table>
+
+      <article class='smaller' style="background:url(./html5slides/images/there-yet.jpg) no-repeat; background-size: 100% 100%">
+        <h1 style="color:white; display:inline; background-color: rgba(0, 0, 0, 0.7); padding:10px" class="up">Ask more often</h1>
+        <span style="position:absolute; bottom:0px"><a href="http://farm4.static.flickr.com/3111/2311947892_18ebb30ba3_z.jpg?zz=1">http://farm4.static.flickr.com/3111/2311947892_18ebb30ba3_z.jpg</a></span>
+      </article>
+
+      <article>
+          <h1 class="up">But not often enough</h1>
+          <img src="./html5slides/images/late.png" style="width:300px; margin-left:auto; margin-right:auto; display:block">
+          <h3>900ms late anyway... (90%!)</h3>
       </article>
       
       <article>
-        <h3>
-          Styles
-        </h3>
+          <h1 class="up">Client to Server is not enough</h1>
+
+        <p>We need smart servers, who can tell me about things without me asking for them.</p>
+        <p>We need servers able to act as clients and trigger events.</p>
+        <h2 style="display: block; float:right; text-align:right; width:80% ">We need PUSH</h2>
+      </article>
+
+      <article  class='smaller' style="background:url(./html5slides/images/brain.jpg) no-repeat; background-size: 100% 100%">
+          <h1 style="color:white; display:inline; background-color: rgba(0, 0, 0, 0.7); padding:10px" class="up">NIH</h1>
+          <span style="position:absolute; bottom:0px"><a href="http://www.flickr.com/photos/arlee/4749707977/">http://www.flickr.com/photos/arlee/4749707977/</a></span>
+      </article>
+
+      <article>
+          <h1>Making the web realtime</h1>
         <ul>
-          <li>
-            <span class='red'>class="red"</span>
-          <li>
-            <span class='blue'>class="blue"</span>
-          <li>
-            <span class='green'>class="green"</span>
-          <li>
-            <span class='yellow'>class="yellow"</span>
-          <li>
-            <span class='black'>class="black"</span>
-          <li>
-            <span class='white'>class="white"</span>
-          <li>
-            <b>bold</b> and <i>italic</i>
+            <li style="color:#CCC">Client to Server is not enough</li>
+            <li style="font-weight:bold;">Realtime is Push</li>
+            <li>Feeds and HTTP : reality check</li>
+            <li>What happens then?</li>
         </ul>
       </article>
       
       <article>
-        <h2>
-          Segue slide
-        </h2>
-      </article>
-
-      <article>
-        <h3>
-          Slide with an image
-        </h3>
-        <p>
-          <img style='height: 500px' src='images/example-graph.png'>
-        </p>
-        <div class='source'>
-          Source: Sergey Brin
-        </div>
-      </article>
-
-      <article>
-        <h3>
-          Slide with an image (centered)
-        </h3>
-        <p>
-          <img class='centered' style='height: 500px' src='images/example-graph.png'>
-        </p>
-        <div class='source'>
-          Source: Larry Page
-        </div>
-      </article>
-
-      <article class='fill'>
-        <h3>
-          Image filling the slide (with optional header)
-        </h3>
-        <p>
-          <img src='images/example-cat.jpg'>
-        </p>
-        <div class='source white'>
-          Source: Eric Schmidt
-        </div>
-      </article>
-
-      <article>
-        <h3>
-          This slide has some code
-        </h3>
-        <section>
-        <pre>
-&lt;script type='text/javascript'&gt;
-  // Say hello world until the user starts questioning
-  // the meaningfulness of their existence.
-  function helloWorld(world) {
-    for (var i = 42; --i &gt;= 0;) {
-      alert('Hello ' + String(world));
-    }
-  }
-&lt;/script&gt;
-&lt;style&gt;
-  p { color: pink }
-  b { color: blue }
-  u { color: 'umber' }
-&lt;/style&gt;
-</pre>
-        </section>
+          <h1>Realtime is on time</h1>
+          <p style="font-style:italic">In computer science, real-time is the study of hardware and software systems that are subject to a "real-time constraint"—i.e., operational deadlines from event to system response.</p>
+          <div class="build">
+          <p>It can be slow</p>
+          <p>Realtime != now</p>
+          </div>
       </article>
       
-      <article class='smaller'>
-        <h3>
-          This slide has some code (small font)
-        </h3>
-        <section>
-        <pre>
-&lt;script type='text/javascript'&gt;
-  // Say hello world until the user starts questioning
-  // the meaningfulness of their existence.
-  function helloWorld(world) {
-    for (var i = 42; --i &gt;= 0;) {
-      alert('Hello ' + String(world));
-    }
-  }
-&lt;/script&gt;
-&lt;style&gt;
-  p { color: pink }
-  b { color: blue }
-  u { color: 'umber' }
-&lt;/style&gt;
-</pre>
-        </section>
+      
+      <article  class='smaller' style="background:url(./html5slides/images/clock.jpg) no-repeat; background-size: 100% 100%">
+          <h1 style="color:white; display:inline; background-color: rgba(0, 0, 0, 0.7); padding:10px" class="up">Realtime is push</h1>
+          <span style="position:absolute; bottom:0px"><a href="http://farm4.static.flickr.com/3046/2986670877_54844d13db_z.jpg?zz=1">http://farm4.static.flickr.com/3046/2986670877_54844d13db_z.jpg?zz=1</a></span>
       </article>
       
       <article>
-        <q>
-          The best way to predict the future is to invent it.
-        </q>
-        <div class='author'>
-          Alan Kay
-        </div>
-      </article>
-      
-      <article class='smaller'>
-        <q>
-          A distributed system is one in which the failure of a computer 
-          you didn’t even know existed can render your own computer unusable.
-        </q>
-        <div class='author'>
-          Leslie Lamport
-        </div>
-      </article>
-      
-      <article class='nobackground'>
-        <h3>
-          A slide with an embed + title
-        </h3>
-        
-        <iframe src='http://www.google.com/doodle4google/history.html'></iframe>
-      </article>
-
-      <article class='nobackground'>
-        <iframe src='http://www.google.com/doodle4google/history.html'></iframe>
-      </article>
-
-      <article class='fill'>
-        <h3>
-          Full-slide embed with (optional) slide title on top
-        </h3>
-        <iframe src='http://www.google.com/doodle4google/history.html'></iframe>
-      </article>
-      
-      <article>
-        <h3>
-          Thank you!
-        </h3>
-        
+          <h1>Making the web realtime</h1>
         <ul>
-          <li>
-            <a href='http://www.google.com'>google.com</a>
+            <li style="color:#CCC">Client to Server is not enough</li>
+            <li style="color:#CCC">Realtime is Push</li>
+            <li style="font-weight:bold;">Feeds and HTTP : reality check</li>
+            <li>What happens then?</li>
         </ul>
+      </article>
+      
+      
+      <article  class='smaller' style="background:url(./html5slides/images/mess.jpg) no-repeat; background-size: 100% 100%">
+          <h1 style="color:white; display:inline; background-color: rgba(0, 0, 0, 0.7); padding:10px" class="up">The web is mess</h1>
+          <span style="position:absolute; bottom:0px"><a href="http://www.flickr.com/photos/tussius/193563104/sizes/o/in/photostream/">http://www.flickr.com/photos/tussius/193563104/sizes/o/in/photostream/</a></span>
+      </article>
+      
+      
+      
+       <article>
+          <h1 class="up">
+            What can we push?
+          </h1>
+
+          <table>
+            <tr>
+                <th style="padding-top:40px; padding-bottom:40px">Format</th>
+                <th style="padding-top:40px; padding-bottom:40px">Pros</th>
+                <th style="padding-top:40px; padding-bottom:40px">Cons</th>
+            </tr>
+            <tr>
+                <td style="padding-top:30px; padding-bottom:30px">HTML</td>
+                <td style="padding-top:30px; padding-bottom:30px">Ubiquituous</td>
+                <td style="padding-top:30px; padding-bottom:30px">Noisy and dirty</td>
+            </tr>
+            <tr>
+                <td style="padding-top:30px; padding-bottom:30px">API</td>
+                <td style="padding-top:30px; padding-bottom:30px">Rich</td>
+                <td style="padding-top:30px; padding-bottom:30px">Un-standardized</td>
+            </tr>
+            <tr>
+                <td style="padding-top:30px; padding-bottom:30px">RSS/Atom feeds</td>
+                <td style="padding-top:30px; padding-bottom:30px">Frequent, rich enough</td>
+                <td style="padding-top:30px; padding-bottom:30px">&lt;XML /&gt;</td>
+            </tr>
+          </table>
+        </article>
+      
+     <article>
+         <h1 class="up">How do we push?</h1>
+         <ul>
+             <li><em>FTP</em> File Transfer Protocol</li>
+             <li><em>IMAP</em> Internet Message Access Protocol</li>
+             <li><em>IRC</em> Internet Relay Chat Protocol</li>
+             <li><em>POP3</em> Post Office Protocol version 3</li>
+             <li><em>SMTP</em> Simple Mail Transfer Protocol</li>
+             <li><em>AMQP</em> Advanced Message Queuing Protocol</li>
+             <li><em>XMPP</em> Extensible Messaging and Presence Protocol</li>
+             <li><strong><em>HTTP</em> HyperText Transfer Protocol</strong></li>
+         </ul>
+     </article>
+     
+     <article>
+         <h1 class="up">PubSubHubbub</h1>
+         <ul class="build">
+         <li>A simple, topic(feed)-based publish/subscribe protocol</li>
+
+         <li>A single API for web-scale, low-latency messaging</li>
+
+         <li>Three participants: Publisher, Subscriber, Hub</li>
+
+         <li>Pragmatic (i.e., not theoretically perfect, but solve huge, known use cases with minimal effort for everybody)</li>
+         </ul>
+     </article>
+     
+     
+     <article>
+         <h1 class="up">5 steps to Epiphany</h1>
+         <ol class="build">
+             <li>Publisher selects a hub, and advertises it</li>
+<pre><code>&lt;atom:link rel=&quot;hub&quot;  href=&quot;http://my-hub.superfeedr.com/&quot; /&gt;</code></pre>
+             <li>Subscriber asks the publisher for a resource and finds the hub</li>
+             <li>Subscriber subscribes to resource on the hub</li>
+             <li>Publishers updates his content and tells the hub</li>
+             <li>Hub gets data and pushes it to all subscribers</li>
+         </ol>
+     </article>
+     
+     
+     
+     <article  class='smaller' style="background:url(./html5slides/images/nuke.jpg) no-repeat; background-size: 100% 100%">
+         <h1 style="color:white; display:inline; background-color: rgba(0, 0, 0, 0.7); padding:10px" class="up">Demo-time</h1>
+         <span style="position:absolute; bottom:0px"><a href="http://www.flickr.com/photos/advjuliocesar/5479764050/sizes/l/in/photostream/">http://www.flickr.com/photos/advjuliocesar/5479764050/sizes/l/in/photostream/</a></span>
+         <span  style="position:absolute; bottom:40px"><a href="http://sup.ee/push-demo">http://sup.ee/push-demo  </a></span>
+     </article>
+     
+     
+     <article>
+         <h1>Making the web realtime</h1>
+       <ul>
+           <li style="color:#CCC">Client to Server is not enough</li>
+           <li style="color:#CCC">Realtime is Push</li>
+           <li style="color:#CCC">Feeds and HTTP : reality check</li>
+           <li style="font-weight:bold;">What happens then?</li>
+       </ul>
+     </article>
+      
+      
+     <article class='smaller' style="background:url(./html5slides/images/track.jpg) no-repeat; background-size: 100% 100%">
+          <h1 style="color:white; display:inline; background-color: rgba(0, 0, 0, 0.7); padding:10px; position:absolute; bottom:10px">Demo-time, Episode II</h1>
+      </article>
+
+      <article class='smaller' style="background:url(./html5slides/images/msgboy.png) no-repeat; background-size: 100% 100%">
+          <h1><a style="color:white; text-decoration:none" href="" target="_blank" href="chrome://extensions/">Msgboy</a></h1>
+      </article>      
+
+
+
+      <article class='biglogo'>
+          <h1>Thanks!</h1>
+          <p style="text-align:center">@superfeedr - @julien51</p>
       </article>
 
     </section>
+
+
+
 
   </body>
 </html>
